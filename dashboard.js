@@ -1,3 +1,4 @@
+```javascript
 import {
     ref,
     onValue
@@ -26,11 +27,34 @@ const headerUserName =
 const balanceElement =
     document.getElementById("balance");
 
+const balanceStat =
+    document.getElementById("balanceStat");
+
 const status =
     document.getElementById("status");
 
 const logoutBtn =
     document.getElementById("logoutBtn");
+
+
+// ================================
+// MY PLAN ELEMENTS
+// ================================
+
+const myPlan =
+    document.getElementById("myPlan");
+
+const myPlanPrice =
+    document.getElementById("myPlanPrice");
+
+const myPlanDuration =
+    document.getElementById("myPlanDuration");
+
+const myPlanDate =
+    document.getElementById("myPlanDate");
+
+const planStatus =
+    document.getElementById("planStatus");
 
 
 // ================================
@@ -72,14 +96,14 @@ watchAuth(function(user){
             }
 
 
+            // ================================
+            // USER NAME
+            // ================================
+
             const name =
                 data.name ||
                 user.displayName ||
                 user.email.split("@")[0];
-
-
-            const balance =
-                Number(data.balance || 0);
 
 
             welcomeName.textContent =
@@ -88,17 +112,198 @@ watchAuth(function(user){
             headerUserName.textContent =
                 name;
 
-            balanceElement.textContent =
+
+            // ================================
+            // BALANCE
+            // ================================
+
+            const balance =
+                Number(data.balance || 0);
+
+
+            const formattedBalance =
                 balance.toLocaleString();
 
+
+            if(balanceElement){
+
+                balanceElement.textContent =
+                    formattedBalance;
+
+            }
+
+
+            if(balanceStat){
+
+                balanceStat.textContent =
+                    formattedBalance;
+
+            }
+
+
+            // ================================
+            // MY PLAN
+            // ================================
+
+            const selectedPlan =
+                data.selectedPlan;
+
+
+            const selectedPrice =
+                Number(
+                    data.selectedPlanPrice || 0
+                );
+
+
+            const dailyReward =
+                Number(
+                    data.dailyTaskReward || 0
+                );
+
+
+            const duration =
+                Number(
+                    data.planDuration || 30
+                );
+
+
+            if(selectedPlan){
+
+                // PLAN NAME
+
+                if(myPlan){
+
+                    myPlan.textContent =
+                        selectedPlan;
+
+                }
+
+
+                // PLAN PRICE
+
+                if(myPlanPrice){
+
+                    myPlanPrice.textContent =
+                        "Rs. " +
+                        selectedPrice.toLocaleString();
+
+                }
+
+
+                // DURATION
+
+                if(myPlanDuration){
+
+                    myPlanDuration.textContent =
+                        duration +
+                        " Days";
+
+                }
+
+
+                // SELECTED DATE
+
+                if(myPlanDate){
+
+                    if(data.planSelectedAt){
+
+                        const selectedDate =
+                            new Date(
+                                data.planSelectedAt
+                            );
+
+
+                        myPlanDate.textContent =
+                            selectedDate.toLocaleDateString(
+                                "en-PK",
+                                {
+                                    day:"2-digit",
+                                    month:"short",
+                                    year:"numeric"
+                                }
+                            );
+
+                    }else{
+
+                        myPlanDate.textContent =
+                            "Not Available";
+
+                    }
+
+                }
+
+
+                // STATUS
+
+                if(planStatus){
+
+                    planStatus.textContent =
+                        "Active";
+
+                }
+
+
+            }else{
+
+                if(myPlan){
+
+                    myPlan.textContent =
+                        "No Plan Selected";
+
+                }
+
+
+                if(myPlanPrice){
+
+                    myPlanPrice.textContent =
+                        "Rs. 0";
+
+                }
+
+
+                if(myPlanDuration){
+
+                    myPlanDuration.textContent =
+                        "30 Days";
+
+                }
+
+
+                if(myPlanDate){
+
+                    myPlanDate.textContent =
+                        "Not Selected";
+
+                }
+
+
+                if(planStatus){
+
+                    planStatus.textContent =
+                        "No Plan";
+
+                }
+
+            }
+
+
+            // ================================
+            // ACCOUNT STATUS
+            // ================================
 
             status.textContent =
                 "Account connected successfully.";
 
         },
+
+
         function(error){
 
-            console.error(error);
+            console.error(
+                "Firebase Database Error:",
+                error
+            );
+
 
             status.textContent =
                 "Unable to load account data.";
@@ -119,6 +324,13 @@ if(logoutBtn){
         "click",
         async function(){
 
+            logoutBtn.disabled =
+                true;
+
+            logoutBtn.textContent =
+                "Logging out...";
+
+
             try{
 
                 await logoutUser();
@@ -130,6 +342,14 @@ if(logoutBtn){
 
                 console.error(error);
 
+
+                logoutBtn.disabled =
+                    false;
+
+                logoutBtn.textContent =
+                    "Logout";
+
+
                 alert(
                     "Unable to logout. Please try again."
                 );
@@ -140,3 +360,4 @@ if(logoutBtn){
     );
 
 }
+```
