@@ -1,13 +1,13 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Login - Tam Earn</title>
+<title>Tam Earn - Login</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -15,351 +15,557 @@
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#f5f7fb;
-    color:#17202a;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#F6F7F9;
+    color:#0F1111;
     min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
 }
 
-.login-box{
-    width:100%;
-    max-width:430px;
-    background:white;
-    border:1px solid #e5e8ec;
-    border-radius:14px;
-    padding:35px 30px;
-    box-shadow:0 8px 30px rgba(0,0,0,.06);
+
+/* HEADER */
+
+header{
+    height:70px;
+    background:#FFFFFF;
+    border-bottom:1px solid #D9DDE0;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
 }
 
 .logo{
-    text-align:center;
-    font-size:28px;
+    color:#087443;
+    font-size:25px;
+    font-weight:800;
+}
+
+.home{
+    color:#16764F;
+    text-decoration:none;
     font-weight:bold;
-    color:#1769ff;
-    margin-bottom:8px;
+}
+
+
+/* LOGIN AREA */
+
+.login-area{
+    min-height:calc(100vh - 70px);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:35px 18px;
+}
+
+.login-card{
+    width:100%;
+    max-width:420px;
+
+    background:#FFFFFF;
+
+    border:1px solid #D9DDE0;
+    border-radius:14px;
+
+    padding:32px;
+
+    box-shadow:0 10px 30px rgba(15,17,17,.06);
+}
+
+.login-icon{
+    width:55px;
+    height:55px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#E9F7F0;
+    color:#087443;
+
+    border-radius:12px;
+
+    font-size:25px;
+
+    margin:0 auto 18px;
+}
+
+h1{
+    text-align:center;
+    color:#0B7044;
+    font-size:28px;
+    margin-bottom:7px;
 }
 
 .subtitle{
     text-align:center;
-    color:#6b7280;
-    margin-bottom:28px;
+    color:#777777;
+    font-size:14px;
+    margin-bottom:27px;
 }
 
-.form-group{
-    margin-bottom:18px;
-}
+
+/* FORM */
 
 label{
     display:block;
+
+    color:#0F1111;
+    font-size:14px;
     font-weight:bold;
+
     margin-bottom:7px;
 }
 
 input{
     width:100%;
+
     padding:13px 14px;
-    border:1px solid #d7dce2;
+
+    border:1px solid #D9DDE0;
     border-radius:7px;
+
     outline:none;
+
+    color:#0F1111;
+    background:#FFFFFF;
+
     font-size:15px;
+
+    margin-bottom:17px;
+}
+
+input::placeholder{
+    color:#777777;
 }
 
 input:focus{
-    border-color:#1769ff;
+    border-color:#2A8964;
+    box-shadow:0 0 0 3px rgba(42,137,100,.10);
 }
 
-.login-btn{
+
+/* PASSWORD */
+
+.password-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.forgot{
+    color:#16764F;
+    font-size:13px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+
+/* BUTTON */
+
+button{
     width:100%;
-    padding:13px;
+
     border:none;
     border-radius:7px;
-    background:#1769ff;
-    color:white;
-    font-size:16px;
+
+    background:#087443;
+    color:#FFFFFF;
+
+    padding:13px;
+
+    font-size:15px;
     font-weight:bold;
+
     cursor:pointer;
+
+    margin-top:3px;
 }
 
-.login-btn:disabled{
+button:hover{
+    background:#0B7044;
+}
+
+button:disabled{
     opacity:.7;
     cursor:not-allowed;
 }
 
+
+/* MESSAGE */
+
 .message{
-    margin-top:16px;
-    padding:11px;
-    border-radius:7px;
     display:none;
+
+    padding:11px;
+
+    margin-top:15px;
+
+    border-radius:7px;
+
     text-align:center;
+
     font-size:14px;
 }
 
 .error{
-    background:#fee2e2;
-    color:#b91c1c;
+    display:block;
+
+    background:#fff0f0;
+    color:#b42318;
+    border:1px solid #f2c5c5;
 }
 
 .success{
-    background:#dcfce7;
-    color:#15803d;
-}
-
-.bottom-text{
-    text-align:center;
-    margin-top:22px;
-    color:#6b7280;
-}
-
-.bottom-text a{
-    color:#1769ff;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.home{
     display:block;
-    text-align:center;
-    margin-top:18px;
-    color:#6b7280;
-    text-decoration:none;
-    font-size:14px;
+
+    background:#E9F7F0;
+    color:#237A59;
+    border:1px solid #cdebdc;
 }
+
+
+/* REGISTER */
+
+.register-text{
+    text-align:center;
+
+    color:#777777;
+
+    font-size:14px;
+
+    margin-top:22px;
+}
+
+.register-text a{
+    color:#087443;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+
+    color:#777777;
+
+    font-size:12px;
+
+    padding:20px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+    header{
+        padding:0 18px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .login-card{
+        padding:25px 20px;
+    }
+
+    h1{
+        font-size:25px;
+    }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
-<div class="login-box">
 
-    <div class="logo">Tam Earn</div>
+<header>
 
-    <p class="subtitle">
-        Login to your account
-    </p>
+<div class="logo">
+Tam Earn
+</div>
 
-    <form id="loginForm">
+<a
+href="index.html"
+class="home">
+Home
+</a>
 
-        <div class="form-group">
-            <label for="email">Email Address</label>
+</header>
 
-            <input
-                type="email"
-                id="email"
-                placeholder="Enter your email"
-                required
-            >
-        </div>
 
-        <div class="form-group">
-            <label for="password">Password</label>
 
-            <input
-                type="password"
-                id="password"
-                placeholder="Enter your password"
-                required
-            >
-        </div>
+<div class="login-area">
 
-        <button
-            type="submit"
-            class="login-btn"
-            id="loginBtn"
-        >
-            Login
-        </button>
+<div class="login-card">
 
-    </form>
 
-    <div id="message" class="message"></div>
+<div class="login-icon">
+🔐
+</div>
 
-    <div class="bottom-text">
-        Don't have an account?
-        <a href="register.html">Register</a>
-    </div>
 
-    <a href="index.html" class="home">
-        ← Back to Home
-    </a>
+<h1>
+Welcome Back
+</h1>
+
+<div class="subtitle">
+Login to your Tam Earn account
+</div>
+
+
+<form id="loginForm">
+
+
+<label for="email">
+Email Address
+</label>
+
+<input
+type="email"
+id="email"
+placeholder="Enter your email"
+required
+>
+
+
+<div class="password-row">
+
+<label for="password">
+Password
+</label>
+
+<a
+href="#"
+class="forgot"
+onclick="return false;">
+Forgot Password?
+</a>
+
+</div>
+
+<input
+type="password"
+id="password"
+placeholder="Enter your password"
+required
+>
+
+
+<button
+type="submit"
+id="loginBtn">
+
+Login to Account
+
+</button>
+
+
+</form>
+
+
+<div
+id="message"
+class="message">
+</div>
+
+
+<div class="register-text">
+
+Don't have an account?
+
+<a href="register.html">
+Create Account
+</a>
 
 </div>
 
 
+</div>
+
+</div>
+
+
+<footer>
+
+© 2026 Tam Earn. All rights reserved.
+
+</footer>
+
+
+
 <script type="module">
 
-import { initializeApp } from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 import {
     getAuth,
     signInWithEmailAndPassword
-} from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
-
-/* FIREBASE CONFIG */
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAQ-FHhexuUfxkcA7zS2iSCLDpAStj3DqI",
-    authDomain: "tam-earn.firebaseapp.com",
-    projectId: "tam-earn",
-    storageBucket: "tam-earn.firebasestorage.app",
-    messagingSenderId: "451049191421",
-    appId: "1:451049191421:web:b52ece93f962955e420b94",
-    measurementId: "G-WPLZVFHDBR"
+
+    apiKey:
+    "AIzaSyAQ-FHhexuUfxkcA7zS2iSCLDpAStj3DqI",
+
+    authDomain:
+    "tam-earn.firebaseapp.com",
+
+    projectId:
+    "tam-earn",
+
+    storageBucket:
+    "tam-earn.firebasestorage.app",
+
+    messagingSenderId:
+    "451049191421",
+
+    appId:
+    "1:451049191421:web:b52ece93f962955e420b94",
+
+    measurementId:
+    "G-WPLZVFHDBR"
 };
 
 
-/* INITIALIZE FIREBASE */
+const app =
+initializeApp(firebaseConfig);
 
-const app = initializeApp(firebaseConfig);
+const auth =
+getAuth(app);
 
-const auth = getAuth(app);
 
+const form =
+document.getElementById("loginForm");
 
-/* ELEMENTS */
-
-const loginForm =
-    document.getElementById("loginForm");
-
-const loginBtn =
-    document.getElementById("loginBtn");
+const button =
+document.getElementById("loginBtn");
 
 const message =
-    document.getElementById("message");
+document.getElementById("message");
 
 
-/* MESSAGE */
+form.addEventListener(
+"submit",
+async function(event){
 
-function showMessage(text,type){
+    event.preventDefault();
 
-    message.textContent = text;
+    const email =
+    document.getElementById("email")
+    .value.trim();
+
+    const password =
+    document.getElementById("password")
+    .value;
+
 
     message.className =
-        "message " + type;
+    "message";
 
-    message.style.display = "block";
-}
-
-
-/* LOGIN */
-
-loginForm.addEventListener(
-    "submit",
-    async function(event){
-
-        event.preventDefault();
-
-        const email =
-            document.getElementById("email")
-            .value
-            .trim();
-
-        const password =
-            document.getElementById("password")
-            .value;
+    message.textContent = "";
 
 
-        loginBtn.disabled = true;
+    button.disabled = true;
 
-        loginBtn.textContent =
-            "Logging in...";
-
-
-        try{
-
-            await signInWithEmailAndPassword(
-                auth,
-                email,
-                password
-            );
+    button.textContent =
+    "Logging in...";
 
 
-            showMessage(
-                "Login successful!",
-                "success"
-            );
+    try{
+
+        await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
 
 
-            setTimeout(function(){
+        message.textContent =
+        "Login successful. Redirecting...";
+
+        message.className =
+        "message success";
+
+
+        setTimeout(
+            function(){
 
                 window.location.href =
-                    "dashboard.html";
+                "dashboard.html";
 
-            },700);
-
-
-        }catch(error){
-
-            console.error(error);
-
-            let errorMessage =
-                "Login failed.";
-
-            if(
-                error.code ===
-                "auth/invalid-credential"
-            ){
-
-                errorMessage =
-                    "Incorrect email or password.";
-
-            }else if(
-                error.code ===
-                "auth/user-not-found"
-            ){
-
-                errorMessage =
-                    "No account found. Please register first.";
-
-            }else if(
-                error.code ===
-                "auth/wrong-password"
-            ){
-
-                errorMessage =
-                    "Incorrect password.";
-
-            }else if(
-                error.code ===
-                "auth/invalid-email"
-            ){
-
-                errorMessage =
-                    "Please enter a valid email.";
-
-            }else if(
-                error.code ===
-                "auth/too-many-requests"
-            ){
-
-                errorMessage =
-                    "Too many attempts. Please try again later.";
-
-            }
+            },
+            700
+        );
 
 
-            showMessage(
-                errorMessage,
-                "error"
-            );
+    }catch(error){
 
+        let text =
+        "Unable to login. Please check your email and password.";
 
-            loginBtn.disabled = false;
+        if(
+            error.code ===
+            "auth/invalid-credential"
+        ){
 
-            loginBtn.textContent =
-                "Login";
+            text =
+            "Invalid email or password.";
+
         }
 
+        if(
+            error.code ===
+            "auth/user-not-found"
+        ){
+
+            text =
+            "No account found. Please register first.";
+
+        }
+
+        if(
+            error.code ===
+            "auth/wrong-password"
+        ){
+
+            text =
+            "Incorrect password.";
+
+        }
+
+
+        message.textContent =
+        text;
+
+        message.className =
+        "message error";
+
+
+        button.disabled = false;
+
+        button.textContent =
+        "Login to Account";
+
     }
-);
+
+});
 
 </script>
 
+
 </body>
 </html>
-```
