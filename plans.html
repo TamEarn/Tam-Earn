@@ -2,14 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Tam Earn - Plans</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -26,11 +24,9 @@ header{
     height:72px;
     background:#FFFFFF;
     border-bottom:1px solid #D9DDE0;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     padding:0 6%;
 }
 
@@ -95,16 +91,12 @@ header{
 .plan-icon{
     width:48px;
     height:48px;
-
     margin:0 auto 13px;
-
     background:#E9F7F0;
     border-radius:10px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     font-size:22px;
 }
 
@@ -140,15 +132,11 @@ header{
     width:100%;
     border:none;
     border-radius:7px;
-
     background:#087443;
     color:#FFFFFF;
-
     padding:11px;
-
     font-size:14px;
     font-weight:bold;
-
     cursor:pointer;
 }
 
@@ -201,15 +189,12 @@ footer{
 }
 
 @media(max-width:1050px){
-
     .plans-grid{
         grid-template-columns:repeat(2,1fr);
     }
-
 }
 
 @media(max-width:600px){
-
     header{
         padding:0 18px;
     }
@@ -229,248 +214,168 @@ footer{
     .plans-grid{
         grid-template-columns:1fr;
     }
-
 }
-
 </style>
-
 </head>
 
 <body>
 
-
 <header>
+    <div class="logo">Tam Earn</div>
 
-<div class="logo">
-Tam Earn
-</div>
-
-<a
-href="dashboard.html"
-class="back">
-Dashboard
-</a>
-
+    <a href="dashboard.html" class="back">
+        Dashboard
+    </a>
 </header>
-
 
 <main class="container">
 
-
 <div class="heading">
-
-<h1>
-Choose Your Plan
-</h1>
-
-<p>
-Select a task-access plan for your Tam Earn account.
-</p>
-
+    <h1>Choose Your Plan</h1>
+    <p>Select a task-access plan for your Tam Earn account.</p>
 </div>
-
 
 <div class="plans-grid">
 
-
 <!-- STARTER -->
-
 <div class="plan-card">
+    <div class="plan-icon">🟢</div>
+    <h2>Starter</h2>
 
-<div class="plan-icon">
-🟢
+    <div class="plan-price">
+        Rs. 600
+    </div>
+
+    <div class="plan-duration">
+        30 Days
+    </div>
+
+    <div class="plan-info">
+        Daily Task Reward: Rs. 75
+    </div>
+
+    <button
+        class="select-btn"
+        data-plan="Starter"
+        data-price="600"
+        data-reward="75">
+        Select Plan
+    </button>
 </div>
-
-<h2>
-Starter
-</h2>
-
-<div class="plan-price">
-Rs. 600
-</div>
-
-<div class="plan-duration">
-30 Days
-</div>
-
-<div class="plan-info">
-Task-access tier
-</div>
-
-<button
-class="select-btn"
-data-plan="Starter"
-data-price="600">
-
-Select Plan
-
-</button>
-
-</div>
-
 
 <!-- BASIC -->
-
 <div class="plan-card">
+    <div class="plan-icon">🔵</div>
+    <h2>Basic</h2>
 
-<div class="plan-icon">
-🔵
+    <div class="plan-price">
+        Rs. 1,400
+    </div>
+
+    <div class="plan-duration">
+        30 Days
+    </div>
+
+    <div class="plan-info">
+        Daily Task Reward: Rs. 175
+    </div>
+
+    <button
+        class="select-btn"
+        data-plan="Basic"
+        data-price="1400"
+        data-reward="175">
+        Select Plan
+    </button>
 </div>
-
-<h2>
-Basic
-</h2>
-
-<div class="plan-price">
-Rs. 1,400
-</div>
-
-<div class="plan-duration">
-30 Days
-</div>
-
-<div class="plan-info">
-Task-access tier
-</div>
-
-<button
-class="select-btn"
-data-plan="Basic"
-data-price="1400">
-
-Select Plan
-
-</button>
-
-</div>
-
 
 <!-- SILVER -->
-
 <div class="plan-card">
+    <div class="plan-icon">🥈</div>
+    <h2>Silver</h2>
 
-<div class="plan-icon">
-🥈
+    <div class="plan-price">
+        Rs. 3,200
+    </div>
+
+    <div class="plan-duration">
+        30 Days
+    </div>
+
+    <div class="plan-info">
+        Daily Task Reward: Rs. 400
+    </div>
+
+    <button
+        class="select-btn"
+        data-plan="Silver"
+        data-price="3200"
+        data-reward="400">
+        Select Plan
+    </button>
 </div>
-
-<h2>
-Silver
-</h2>
-
-<div class="plan-price">
-Rs. 3,200
-</div>
-
-<div class="plan-duration">
-30 Days
-</div>
-
-<div class="plan-info">
-Task-access tier
-</div>
-
-<button
-class="select-btn"
-data-plan="Silver"
-data-price="3200">
-
-Select Plan
-
-</button>
-
-</div>
-
 
 <!-- GOLD -->
-
 <div class="plan-card">
+    <div class="plan-icon">🥇</div>
+    <h2>Gold</h2>
 
-<div class="plan-icon">
-🥇
+    <div class="plan-price">
+        Rs. 6,400
+    </div>
+
+    <div class="plan-duration">
+        30 Days
+    </div>
+
+    <div class="plan-info">
+        Daily Task Reward: Rs. 800
+    </div>
+
+    <button
+        class="select-btn"
+        data-plan="Gold"
+        data-price="6400"
+        data-reward="800">
+        Select Plan
+    </button>
 </div>
-
-<h2>
-Gold
-</h2>
-
-<div class="plan-price">
-Rs. 6,400
-</div>
-
-<div class="plan-duration">
-30 Days
-</div>
-
-<div class="plan-info">
-Task-access tier
-</div>
-
-<button
-class="select-btn"
-data-plan="Gold"
-data-price="6400">
-
-Select Plan
-
-</button>
-
-</div>
-
 
 <!-- PREMIUM -->
-
 <div class="plan-card featured">
+    <div class="plan-icon">⭐</div>
+    <h2>Premium</h2>
 
-<div class="plan-icon">
-⭐
+    <div class="plan-price">
+        Rs. 13,600
+    </div>
+
+    <div class="plan-duration">
+        30 Days
+    </div>
+
+    <div class="plan-info">
+        Daily Task Reward: Rs. 1,700
+    </div>
+
+    <button
+        class="select-btn"
+        data-plan="Premium"
+        data-price="13600"
+        data-reward="1700">
+        Select Plan
+    </button>
 </div>
-
-<h2>
-Premium
-</h2>
-
-<div class="plan-price">
-Rs. 13,600
-</div>
-
-<div class="plan-duration">
-30 Days
-</div>
-
-<div class="plan-info">
-Task-access tier
-</div>
-
-<button
-class="select-btn"
-data-plan="Premium"
-data-price="13600">
-
-Select Plan
-
-</button>
 
 </div>
 
-
-</div>
-
-
-<div
-id="message"
-class="message">
-</div>
-
+<div id="message" class="message"></div>
 
 </main>
 
-
 <footer>
-
-Tam Earn © 2026. All rights reserved.
-
+    Tam Earn © 2026. All rights reserved.
 </footer>
-
 
 <script type="module">
 
@@ -520,14 +425,11 @@ const firebaseConfig = {
 };
 
 
-const app =
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-const auth =
-getAuth(app);
+const auth = getAuth(app);
 
-const database =
-getDatabase(app);
+const database = getDatabase(app);
 
 
 const message =
@@ -545,7 +447,7 @@ function showMessage(text,type){
     message.textContent = text;
 
     message.className =
-    "message " + type;
+        "message " + type;
 }
 
 
@@ -556,20 +458,19 @@ onAuthStateChanged(
         if(!user){
 
             window.location.href =
-            "login.html";
+                "login.html";
 
             return;
         }
-
 
         currentUser = user;
 
 
         const userRef =
-        ref(
-            database,
-            "users/" + user.uid
-        );
+            ref(
+                database,
+                "users/" + user.uid
+            );
 
 
         onValue(
@@ -577,8 +478,7 @@ onAuthStateChanged(
             function(snapshot){
 
                 const data =
-                snapshot.val();
-
+                    snapshot.val();
 
                 if(!data){
                     return;
@@ -586,7 +486,7 @@ onAuthStateChanged(
 
 
                 const selectedPlan =
-                data.selectedPlan;
+                    data.selectedPlan;
 
 
                 buttons.forEach(
@@ -598,7 +498,7 @@ onAuthStateChanged(
                         ){
 
                             button.textContent =
-                            "Selected ✓";
+                                "Selected ✓";
 
                             button.classList.add(
                                 "selected"
@@ -607,20 +507,16 @@ onAuthStateChanged(
                         }else{
 
                             button.textContent =
-                            "Select Plan";
+                                "Select Plan";
 
                             button.classList.remove(
                                 "selected"
                             );
-
                         }
-
                     }
                 );
-
             }
         );
-
     }
 );
 
@@ -635,26 +531,30 @@ buttons.forEach(
                 if(!currentUser){
 
                     window.location.href =
-                    "login.html";
+                        "login.html";
 
                     return;
                 }
 
 
                 const plan =
-                button.dataset.plan;
+                    button.dataset.plan;
 
                 const price =
-                Number(
-                    button.dataset.price
-                );
+                    Number(
+                        button.dataset.price
+                    );
+
+                const dailyReward =
+                    Number(
+                        button.dataset.reward
+                    );
 
 
-                button.disabled =
-                true;
+                button.disabled = true;
 
                 button.textContent =
-                "Saving...";
+                    "Saving...";
 
 
                 try{
@@ -668,16 +568,20 @@ buttons.forEach(
                         {
 
                             selectedPlan:
-                            plan,
+                                plan,
 
                             selectedPlanPrice:
-                            price,
+                                price,
+
+                            dailyTaskReward:
+                                dailyReward,
 
                             planDuration:
-                            30,
+                                30,
 
                             planSelectedAt:
-                            new Date().toISOString()
+                                new Date()
+                                .toISOString()
 
                         }
                     );
@@ -691,7 +595,7 @@ buttons.forEach(
 
 
                     button.textContent =
-                    "Selected ✓";
+                        "Selected ✓";
 
                     button.classList.add(
                         "selected"
@@ -700,7 +604,9 @@ buttons.forEach(
 
                 }catch(error){
 
-                    console.error(error);
+                    console.error(
+                        error
+                    );
 
 
                     showMessage(
@@ -710,22 +616,17 @@ buttons.forEach(
 
 
                     button.textContent =
-                    "Select Plan";
-
+                        "Select Plan";
                 }
 
 
-                button.disabled =
-                false;
-
+                button.disabled = false;
             }
         );
-
     }
 );
 
 </script>
-
 
 </body>
 </html>
