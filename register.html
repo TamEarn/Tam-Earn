@@ -454,6 +454,9 @@ const firebaseConfig = {
     projectId:
     "tam-earn",
 
+    databaseURL:
+    "https://tam-earn-default-rtdb.firebaseio.com",
+
     storageBucket:
     "tam-earn.firebasestorage.app",
 
@@ -611,6 +614,11 @@ async function(event){
 
     }catch(error){
 
+        console.error(
+            "Registration error:",
+            error
+        );
+
         let text =
         "Unable to create account.";
 
@@ -641,6 +649,26 @@ async function(event){
 
             text =
             "Password is too weak.";
+
+        }
+
+        else if(
+            error.code ===
+            "PERMISSION_DENIED"
+        ){
+
+            text =
+            "Database permission denied. Please check Firebase Database Rules.";
+
+        }
+
+        else if(
+            error.code ===
+            "database/permission-denied"
+        ){
+
+            text =
+            "Database permission denied. Please check Firebase Database Rules.";
 
         }
 
