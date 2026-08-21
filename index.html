@@ -1,13 +1,16 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tam Earn - Earn Rewards</title>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Tam Earn - Complete Tasks. Earn Rewards.</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -15,83 +18,111 @@
 }
 
 body{
-    font-family:Arial, sans-serif;
-    background:#f5f7fb;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f6f8fc;
     color:#17202a;
-    line-height:1.6;
 }
 
+a{
+    text-decoration:none;
+}
+
+
+/* ================= HEADER ================= */
+
 header{
+    height:72px;
     background:#ffffff;
-    border-bottom:1px solid #e5e8ec;
-    padding:16px 6%;
+    border-bottom:1px solid #e8ebf0;
+
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
+
+    padding:0 7%;
+
     position:sticky;
     top:0;
     z-index:100;
 }
 
 .logo{
-    font-size:25px;
-    font-weight:bold;
+    font-size:27px;
+    font-weight:800;
     color:#1769ff;
 }
 
-.nav-buttons{
+.nav{
     display:flex;
-    gap:10px;
+    align-items:center;
+    gap:28px;
 }
 
-.btn{
-    text-decoration:none;
-    padding:10px 18px;
-    border-radius:7px;
-    font-weight:bold;
-    display:inline-block;
-    cursor:pointer;
+.nav a{
+    color:#4b5563;
+    font-weight:600;
+}
+
+.nav a:hover{
+    color:#1769ff;
 }
 
 .login-btn{
-    color:#1769ff;
+    padding:10px 18px;
     border:1px solid #1769ff;
-    background:white;
+    border-radius:8px;
+    color:#1769ff !important;
 }
 
 .register-btn{
-    color:white;
+    padding:11px 19px;
+    border-radius:8px;
     background:#1769ff;
+    color:white !important;
 }
 
+
+/* ================= HERO ================= */
+
 .hero{
-    min-height:520px;
+    min-height:600px;
+
     display:flex;
     align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:70px 20px;
-    background:white;
+
+    padding:70px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7faff 0%,
+            #eef4ff 100%
+        );
 }
 
 .hero-content{
-    max-width:800px;
+    width:55%;
 }
 
 .badge{
     display:inline-block;
-    background:#eef4ff;
+
+    background:#e5efff;
     color:#1769ff;
-    padding:7px 15px;
+
+    padding:8px 14px;
+
     border-radius:30px;
-    font-size:14px;
+
+    font-size:13px;
     font-weight:bold;
+
     margin-bottom:20px;
 }
 
 .hero h1{
-    font-size:48px;
-    line-height:1.15;
+    font-size:56px;
+    line-height:1.08;
     margin-bottom:20px;
 }
 
@@ -101,267 +132,772 @@ header{
 
 .hero p{
     font-size:18px;
-    color:#65717f;
+    line-height:1.7;
+    color:#667085;
+
+    max-width:650px;
+
     margin-bottom:30px;
 }
 
 .hero-buttons{
     display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
+    gap:14px;
 }
 
-.primary{
+.primary-btn{
     background:#1769ff;
     color:white;
+
+    padding:14px 24px;
+
+    border-radius:9px;
+
+    font-weight:bold;
 }
 
-.secondary{
+.secondary-btn{
     background:white;
     color:#1769ff;
+
+    padding:14px 24px;
+
+    border-radius:9px;
+
     border:1px solid #1769ff;
+
+    font-weight:bold;
 }
 
-section{
-    padding:65px 6%;
+
+/* ================= HERO CARD ================= */
+
+.hero-card-area{
+    width:45%;
+
+    display:flex;
+    justify-content:center;
 }
 
-.section-title{
-    text-align:center;
+.wallet-card{
+    width:360px;
+
+    background:#1769ff;
+    color:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 25px 50px
+        rgba(23,105,255,.25);
+
+    transform:rotate(2deg);
+}
+
+.wallet-top{
+    display:flex;
+    justify-content:space-between;
+
     margin-bottom:40px;
 }
 
-.section-title h2{
-    font-size:32px;
-    margin-bottom:10px;
+.wallet-title{
+    font-size:15px;
+    opacity:.85;
 }
 
-.section-title p{
-    color:#6b7280;
-}
-
-.features{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-    max-width:1100px;
-    margin:auto;
-}
-
-.card{
-    background:white;
-    padding:30px 24px;
-    border-radius:12px;
-    border:1px solid #e5e8ec;
-    text-align:center;
-}
-
-.card-icon{
-    width:55px;
-    height:55px;
-    margin:0 auto 18px;
-    border-radius:50%;
-    background:#eef4ff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.wallet-icon{
     font-size:25px;
 }
 
-.card h3{
+.wallet-balance{
+    font-size:42px;
+    font-weight:800;
+
     margin-bottom:10px;
 }
 
-.card p{
-    color:#6b7280;
-    font-size:15px;
+.wallet-small{
+    opacity:.8;
+    font-size:13px;
 }
 
-.cta{
+.wallet-line{
+    height:1px;
+    background:rgba(255,255,255,.25);
+
+    margin:25px 0;
+}
+
+.wallet-bottom{
+    display:flex;
+    justify-content:space-between;
+}
+
+.wallet-item small{
+    opacity:.7;
+}
+
+.wallet-item strong{
+    display:block;
+    margin-top:5px;
+}
+
+
+/* ================= SECTION ================= */
+
+.section{
+    padding:80px 7%;
+}
+
+.section-heading{
+    text-align:center;
+
+    max-width:700px;
+
+    margin:0 auto 45px;
+}
+
+.section-heading h2{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.section-heading p{
+    color:#6b7280;
+    line-height:1.7;
+}
+
+
+/* ================= CARDS ================= */
+
+.features{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:22px;
+}
+
+.feature-card{
+    background:white;
+
+    border:1px solid #e7eaf0;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    transition:.25s;
+}
+
+.feature-card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,.07);
+}
+
+.feature-icon{
+    width:52px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#edf4ff;
+
+    border-radius:12px;
+
+    font-size:25px;
+
+    margin-bottom:20px;
+}
+
+.feature-card h3{
+    margin-bottom:10px;
+}
+
+.feature-card p{
+    color:#6b7280;
+    line-height:1.6;
+}
+
+
+/* ================= HOW ================= */
+
+.steps{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+}
+
+.step{
+    text-align:center;
+    padding:20px;
+}
+
+.step-number{
+    width:55px;
+    height:55px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 18px;
+
+    border-radius:50%;
+
     background:#1769ff;
     color:white;
+
+    font-size:20px;
+    font-weight:bold;
+}
+
+.step h3{
+    margin-bottom:8px;
+}
+
+.step p{
+    color:#6b7280;
+    line-height:1.6;
+}
+
+
+/* ================= CTA ================= */
+
+.cta{
+    margin:0 7% 70px;
+
+    padding:60px 30px;
+
+    border-radius:20px;
+
     text-align:center;
-    padding:65px 20px;
+
+    background:#1769ff;
+
+    color:white;
 }
 
 .cta h2{
-    font-size:34px;
+    font-size:36px;
     margin-bottom:12px;
 }
 
 .cta p{
-    margin-bottom:25px;
     opacity:.9;
+    margin-bottom:25px;
 }
 
-.cta .btn{
+.cta-btn{
+    display:inline-block;
+
     background:white;
     color:#1769ff;
+
+    padding:13px 25px;
+
+    border-radius:8px;
+
+    font-weight:bold;
 }
+
+
+/* ================= FOOTER ================= */
 
 footer{
     background:#111827;
-    color:#d1d5db;
+    color:#9ca3af;
+
     text-align:center;
-    padding:25px 15px;
-    font-size:14px;
+
+    padding:30px 20px;
 }
 
-@media(max-width:800px){
-    .features{
+.footer-logo{
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        gap:50px;
+    }
+
+    .hero-content,
+    .hero-card-area{
+        width:100%;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .features,
+    .steps{
         grid-template-columns:1fr;
     }
 
-    .hero h1{
-        font-size:36px;
+    .nav a:not(.login-btn):not(.register-btn){
+        display:none;
     }
+
+}
+
+
+@media(max-width:600px){
 
     header{
-        padding:14px 4%;
+        padding:0 20px;
     }
 
-    .logo{
-        font-size:21px;
+    .nav{
+        gap:8px;
     }
 
-    .btn{
-        padding:9px 13px;
-        font-size:14px;
+    .login-btn,
+    .register-btn{
+        padding:8px 11px;
+        font-size:13px;
     }
+
+    .hero{
+        padding:55px 20px;
+    }
+
+    .hero h1{
+        font-size:39px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .wallet-card{
+        width:100%;
+        max-width:350px;
+    }
+
+    .section{
+        padding:60px 20px;
+    }
+
+    .section-heading h2{
+        font-size:29px;
+    }
+
+    .cta{
+        margin:0 20px 50px;
+        padding:45px 20px;
+    }
+
+    .cta h2{
+        font-size:29px;
+    }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<header>
-    <div class="logo">Tam Earn</div>
 
-    <div class="nav-buttons">
-        <a href="login.html" class="btn login-btn">Login</a>
-        <a href="register.html" class="btn register-btn">Register</a>
-    </div>
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="logo">
+Tam Earn
+</div>
+
+
+<nav class="nav">
+
+<a href="#features">
+Features
+</a>
+
+<a href="#how">
+How It Works
+</a>
+
+<a
+href="login.html"
+class="login-btn">
+Login
+</a>
+
+<a
+href="register.html"
+class="register-btn">
+Get Started
+</a>
+
+</nav>
+
 </header>
 
-<main>
+
+
+<!-- ================= HERO ================= -->
 
 <section class="hero">
-    <div class="hero-content">
 
-        <div class="badge">
-            TAMEARN • REWARD PLATFORM
-        </div>
 
-        <h1>
-            Complete Tasks.<br>
-            <span>Earn Rewards.</span>
-        </h1>
+<div class="hero-content">
 
-        <p>
-            Complete eligible advertising and online tasks
-            and receive rewards according to platform rules.
-        </p>
+<span class="badge">
+PAKISTAN • REWARD PLATFORM
+</span>
 
-        <div class="hero-buttons">
-            <a href="register.html" class="btn primary">
-                Get Started
-            </a>
 
-            <a href="login.html" class="btn secondary">
-                Login
-            </a>
-        </div>
+<h1>
 
-    </div>
+Complete Tasks.
+<br>
+
+<span>Earn Rewards.</span>
+
+</h1>
+
+
+<p>
+
+Complete eligible advertising and online
+tasks and receive rewards according to
+platform rules.
+
+Start your journey with Tam Earn today.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="register.html"
+class="primary-btn">
+
+Create Free Account
+
+</a>
+
+
+<a
+href="login.html"
+class="secondary-btn">
+
+Login to Account
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="hero-card-area">
+
+<div class="wallet-card">
+
+
+<div class="wallet-top">
+
+<div>
+<div class="wallet-title">
+Tam Earn Wallet
+</div>
+
+<div class="wallet-small">
+Available Balance
+</div>
+</div>
+
+<div class="wallet-icon">
+💰
+</div>
+
+</div>
+
+
+<div class="wallet-balance">
+Rs. 500
+</div>
+
+
+<div class="wallet-small">
+Demo Wallet Balance
+</div>
+
+
+<div class="wallet-line"></div>
+
+
+<div class="wallet-bottom">
+
+<div class="wallet-item">
+<small>Tasks</small>
+<strong>Available</strong>
+</div>
+
+
+<div class="wallet-item">
+<small>Status</small>
+<strong>Active</strong>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 
-<section>
 
-    <div class="section-title">
-        <h2>How Tam Earn Works</h2>
-        <p>Simple steps to get started</p>
-    </div>
+<!-- ================= FEATURES ================= -->
 
-    <div class="features">
+<section
+class="section"
+id="features">
 
-        <div class="card">
-            <div class="card-icon">👤</div>
-            <h3>Create Account</h3>
-            <p>
-                Register your Tam Earn account
-                using your email and password.
-            </p>
-        </div>
 
-        <div class="card">
-            <div class="card-icon">✓</div>
-            <h3>Complete Tasks</h3>
-            <p>
-                Complete eligible tasks and
-                activities available on the platform.
-            </p>
-        </div>
+<div class="section-heading">
 
-        <div class="card">
-            <div class="card-icon">💰</div>
-            <h3>Earn Rewards</h3>
-            <p>
-                Receive rewards according to
-                Tam Earn platform rules.
-            </p>
-        </div>
+<h2>
+Everything You Need
+</h2>
 
-    </div>
+<p>
+A simple and organized platform for
+managing your tasks, rewards and account.
+</p>
+
+</div>
+
+
+
+<div class="features">
+
+
+<div class="feature-card">
+
+<div class="feature-icon">
+📺
+</div>
+
+<h3>
+Complete Tasks
+</h3>
+
+<p>
+Access eligible tasks and activities
+available through the platform.
+</p>
+
+</div>
+
+
+
+<div class="feature-card">
+
+<div class="feature-icon">
+💰
+</div>
+
+<h3>
+Track Earnings
+</h3>
+
+<p>
+Keep track of your wallet balance
+and available rewards from your dashboard.
+</p>
+
+</div>
+
+
+
+<div class="feature-card">
+
+<div class="feature-icon">
+🔐
+</div>
+
+<h3>
+Secure Account
+</h3>
+
+<p>
+Your account is connected with
+Firebase Authentication and protected
+database access.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section
+class="section"
+id="how">
+
+
+<div class="section-heading">
+
+<h2>
+How Tam Earn Works
+</h2>
+
+<p>
+Getting started is simple.
+</p>
+
+</div>
+
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="step-number">
+1
+</div>
+
+<h3>
+Create Account
+</h3>
+
+<p>
+Register your account using
+your email and password.
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-number">
+2
+</div>
+
+<h3>
+Complete Tasks
+</h3>
+
+<p>
+Complete eligible activities
+available to your account.
+</p>
+
+</div>
+
+
+
+<div class="step">
+
+<div class="step-number">
+3
+</div>
+
+<h3>
+Receive Rewards
+</h3>
+
+<p>
+Track your eligible rewards
+through your Tam Earn wallet.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
 
 <section class="cta">
 
-    <h2>Ready to Get Started?</h2>
+<h2>
+Ready to Get Started?
+</h2>
 
-    <p>
-        Create your account and access your Tam Earn dashboard.
-    </p>
+<p>
+Create your Tam Earn account today.
+</p>
 
-    <a href="register.html" class="btn">
-        Create Account
-    </a>
+<a
+href="register.html"
+class="cta-btn">
+
+Create Account
+
+</a>
 
 </section>
 
-</main>
 
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
-    © 2026 Tam Earn. All rights reserved.
+
+<div class="footer-logo">
+Tam Earn
+</div>
+
+<p>
+© 2026 Tam Earn. All rights reserved.
+</p>
+
 </footer>
 
 
-<!-- Firebase -->
-<script type="module">
-
-import { initializeApp } from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-
-const firebaseConfig = {
-    apiKey: "AIzaSyAQ-FHhexuUfxkcA7zS2iSCLDpAStj3DqI",
-    authDomain: "tam-earn.firebaseapp.com",
-    projectId: "tam-earn",
-    storageBucket: "tam-earn.firebasestorage.app",
-    messagingSenderId: "451049191421",
-    appId: "1:451049191421:web:b52ece93f962955e420b94",
-    measurementId: "G-WPLZVFHDBR"
-};
-
-const app = initializeApp(firebaseConfig);
-
-console.log("Tam Earn Firebase connected successfully.");
-
-</script>
-
 </body>
 </html>
-```
