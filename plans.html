@@ -1,0 +1,732 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tam Earn - Plans</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#F6F7F9;
+    color:#0F1111;
+}
+
+header{
+    height:72px;
+    background:#FFFFFF;
+    border-bottom:1px solid #D9DDE0;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+}
+
+.logo{
+    color:#087443;
+    font-size:26px;
+    font-weight:800;
+}
+
+.back{
+    color:#087443;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.container{
+    max-width:1180px;
+    margin:auto;
+    padding:35px 20px;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.heading h1{
+    color:#0B7044;
+    font-size:30px;
+    margin-bottom:6px;
+}
+
+.heading p{
+    color:#777777;
+    font-size:14px;
+}
+
+.plans-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:16px;
+}
+
+.plan-card{
+    background:#FFFFFF;
+    border:1px solid #D9DDE0;
+    border-radius:13px;
+    padding:22px 18px;
+    text-align:center;
+    transition:.2s;
+}
+
+.plan-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 22px rgba(15,17,17,.07);
+}
+
+.plan-card.featured{
+    border:2px solid #087443;
+}
+
+.plan-icon{
+    width:48px;
+    height:48px;
+
+    margin:0 auto 13px;
+
+    background:#E9F7F0;
+    border-radius:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+}
+
+.plan-card h2{
+    color:#0B7044;
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+.plan-price{
+    color:#087443;
+    font-size:25px;
+    font-weight:800;
+    margin-bottom:5px;
+}
+
+.plan-duration{
+    color:#777777;
+    font-size:13px;
+    margin-bottom:14px;
+}
+
+.plan-info{
+    background:#E9F7F0;
+    color:#237A59;
+    border-radius:7px;
+    padding:9px 5px;
+    font-size:12px;
+    margin-bottom:16px;
+}
+
+.select-btn{
+    width:100%;
+    border:none;
+    border-radius:7px;
+
+    background:#087443;
+    color:#FFFFFF;
+
+    padding:11px;
+
+    font-size:14px;
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.select-btn:hover{
+    background:#0B7044;
+}
+
+.select-btn:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+}
+
+.selected{
+    background:#E9F7F0;
+    color:#087443;
+}
+
+.message{
+    display:none;
+    margin:25px auto 0;
+    max-width:600px;
+    padding:12px;
+    border-radius:7px;
+    text-align:center;
+    font-size:14px;
+}
+
+.success{
+    display:block;
+    background:#E9F7F0;
+    color:#237A59;
+    border:1px solid #cdebdc;
+}
+
+.error{
+    display:block;
+    background:#fff0f0;
+    color:#b42318;
+    border:1px solid #f2c5c5;
+}
+
+footer{
+    text-align:center;
+    color:#777777;
+    padding:30px 15px;
+    margin-top:20px;
+    background:#FFFFFF;
+    border-top:1px solid #D9DDE0;
+    font-size:13px;
+}
+
+@media(max-width:1050px){
+
+    .plans-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    header{
+        padding:0 18px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .container{
+        padding:28px 15px;
+    }
+
+    .heading h1{
+        font-size:26px;
+    }
+
+    .plans-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="logo">
+Tam Earn
+</div>
+
+<a
+href="dashboard.html"
+class="back">
+Dashboard
+</a>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="heading">
+
+<h1>
+Choose Your Plan
+</h1>
+
+<p>
+Select a task-access plan for your Tam Earn account.
+</p>
+
+</div>
+
+
+<div class="plans-grid">
+
+
+<!-- STARTER -->
+
+<div class="plan-card">
+
+<div class="plan-icon">
+🟢
+</div>
+
+<h2>
+Starter
+</h2>
+
+<div class="plan-price">
+Rs. 600
+</div>
+
+<div class="plan-duration">
+30 Days
+</div>
+
+<div class="plan-info">
+Task-access tier
+</div>
+
+<button
+class="select-btn"
+data-plan="Starter"
+data-price="600">
+
+Select Plan
+
+</button>
+
+</div>
+
+
+<!-- BASIC -->
+
+<div class="plan-card">
+
+<div class="plan-icon">
+🔵
+</div>
+
+<h2>
+Basic
+</h2>
+
+<div class="plan-price">
+Rs. 1,400
+</div>
+
+<div class="plan-duration">
+30 Days
+</div>
+
+<div class="plan-info">
+Task-access tier
+</div>
+
+<button
+class="select-btn"
+data-plan="Basic"
+data-price="1400">
+
+Select Plan
+
+</button>
+
+</div>
+
+
+<!-- SILVER -->
+
+<div class="plan-card">
+
+<div class="plan-icon">
+🥈
+</div>
+
+<h2>
+Silver
+</h2>
+
+<div class="plan-price">
+Rs. 3,200
+</div>
+
+<div class="plan-duration">
+30 Days
+</div>
+
+<div class="plan-info">
+Task-access tier
+</div>
+
+<button
+class="select-btn"
+data-plan="Silver"
+data-price="3200">
+
+Select Plan
+
+</button>
+
+</div>
+
+
+<!-- GOLD -->
+
+<div class="plan-card">
+
+<div class="plan-icon">
+🥇
+</div>
+
+<h2>
+Gold
+</h2>
+
+<div class="plan-price">
+Rs. 6,400
+</div>
+
+<div class="plan-duration">
+30 Days
+</div>
+
+<div class="plan-info">
+Task-access tier
+</div>
+
+<button
+class="select-btn"
+data-plan="Gold"
+data-price="6400">
+
+Select Plan
+
+</button>
+
+</div>
+
+
+<!-- PREMIUM -->
+
+<div class="plan-card featured">
+
+<div class="plan-icon">
+⭐
+</div>
+
+<h2>
+Premium
+</h2>
+
+<div class="plan-price">
+Rs. 13,600
+</div>
+
+<div class="plan-duration">
+30 Days
+</div>
+
+<div class="plan-info">
+Task-access tier
+</div>
+
+<button
+class="select-btn"
+data-plan="Premium"
+data-price="13600">
+
+Select Plan
+
+</button>
+
+</div>
+
+
+</div>
+
+
+<div
+id="message"
+class="message">
+</div>
+
+
+</main>
+
+
+<footer>
+
+Tam Earn © 2026. All rights reserved.
+
+</footer>
+
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+import {
+    getAuth,
+    onAuthStateChanged
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+import {
+    getDatabase,
+    ref,
+    update,
+    onValue
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
+
+
+const firebaseConfig = {
+
+    apiKey:
+    "AIzaSyAQ-FHhexuUfxkcA7zS2iSCLDpAStj3DqI",
+
+    authDomain:
+    "tam-earn.firebaseapp.com",
+
+    projectId:
+    "tam-earn",
+
+    databaseURL:
+    "https://tam-earn-default-rtdb.firebaseio.com",
+
+    storageBucket:
+    "tam-earn.firebasestorage.app",
+
+    messagingSenderId:
+    "451049191421",
+
+    appId:
+    "1:451049191421:web:b52ece93f962955e420b94",
+
+    measurementId:
+    "G-WPLZVFHDBR"
+};
+
+
+const app =
+initializeApp(firebaseConfig);
+
+const auth =
+getAuth(app);
+
+const database =
+getDatabase(app);
+
+
+const message =
+document.getElementById("message");
+
+const buttons =
+document.querySelectorAll(".select-btn");
+
+
+let currentUser = null;
+
+
+function showMessage(text,type){
+
+    message.textContent = text;
+
+    message.className =
+    "message " + type;
+}
+
+
+onAuthStateChanged(
+    auth,
+    function(user){
+
+        if(!user){
+
+            window.location.href =
+            "login.html";
+
+            return;
+        }
+
+
+        currentUser = user;
+
+
+        const userRef =
+        ref(
+            database,
+            "users/" + user.uid
+        );
+
+
+        onValue(
+            userRef,
+            function(snapshot){
+
+                const data =
+                snapshot.val();
+
+
+                if(!data){
+                    return;
+                }
+
+
+                const selectedPlan =
+                data.selectedPlan;
+
+
+                buttons.forEach(
+                    function(button){
+
+                        if(
+                            button.dataset.plan ===
+                            selectedPlan
+                        ){
+
+                            button.textContent =
+                            "Selected ✓";
+
+                            button.classList.add(
+                                "selected"
+                            );
+
+                        }else{
+
+                            button.textContent =
+                            "Select Plan";
+
+                            button.classList.remove(
+                                "selected"
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+
+buttons.forEach(
+    function(button){
+
+        button.addEventListener(
+            "click",
+            async function(){
+
+                if(!currentUser){
+
+                    window.location.href =
+                    "login.html";
+
+                    return;
+                }
+
+
+                const plan =
+                button.dataset.plan;
+
+                const price =
+                Number(
+                    button.dataset.price
+                );
+
+
+                button.disabled =
+                true;
+
+                button.textContent =
+                "Saving...";
+
+
+                try{
+
+                    await update(
+                        ref(
+                            database,
+                            "users/" +
+                            currentUser.uid
+                        ),
+                        {
+
+                            selectedPlan:
+                            plan,
+
+                            selectedPlanPrice:
+                            price,
+
+                            planDuration:
+                            30,
+
+                            planSelectedAt:
+                            new Date().toISOString()
+
+                        }
+                    );
+
+
+                    showMessage(
+                        plan +
+                        " plan selected successfully.",
+                        "success"
+                    );
+
+
+                    button.textContent =
+                    "Selected ✓";
+
+                    button.classList.add(
+                        "selected"
+                    );
+
+
+                }catch(error){
+
+                    console.error(error);
+
+
+                    showMessage(
+                        "Unable to save your plan. Please try again.",
+                        "error"
+                    );
+
+
+                    button.textContent =
+                    "Select Plan";
+
+                }
+
+
+                button.disabled =
+                false;
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
+```
