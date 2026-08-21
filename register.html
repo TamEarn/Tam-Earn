@@ -1,13 +1,14 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Register - Tam Earn</title>
+<title>Tam Earn - Register</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -15,284 +16,524 @@
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#f5f7fb;
-    color:#17202a;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#F6F7F9;
+    color:#0F1111;
     min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
 }
 
-.register-box{
-    width:100%;
-    max-width:430px;
-    background:white;
-    border:1px solid #e5e8ec;
-    border-radius:14px;
-    padding:35px 30px;
-    box-shadow:0 8px 30px rgba(0,0,0,.06);
+
+/* HEADER */
+
+header{
+    height:70px;
+    background:#FFFFFF;
+    border-bottom:1px solid #D9DDE0;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
 }
 
 .logo{
-    text-align:center;
-    font-size:28px;
+    color:#087443;
+    font-size:25px;
+    font-weight:800;
+}
+
+.home{
+    color:#16764F;
+    text-decoration:none;
     font-weight:bold;
-    color:#1769ff;
-    margin-bottom:8px;
+}
+
+
+/* REGISTER AREA */
+
+.register-area{
+    min-height:calc(100vh - 70px);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:35px 18px;
+}
+
+.register-card{
+    width:100%;
+    max-width:440px;
+
+    background:#FFFFFF;
+
+    border:1px solid #D9DDE0;
+    border-radius:14px;
+
+    padding:32px;
+
+    box-shadow:0 10px 30px rgba(15,17,17,.06);
+}
+
+.register-icon{
+    width:55px;
+    height:55px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#E9F7F0;
+    color:#087443;
+
+    border-radius:12px;
+
+    font-size:25px;
+
+    margin:0 auto 18px;
+}
+
+h1{
+    text-align:center;
+    color:#0B7044;
+    font-size:28px;
+    margin-bottom:7px;
 }
 
 .subtitle{
     text-align:center;
-    color:#6b7280;
-    margin-bottom:28px;
+    color:#777777;
+    font-size:14px;
+    margin-bottom:27px;
 }
 
-.form-group{
-    margin-bottom:18px;
-}
+
+/* FORM */
 
 label{
     display:block;
+
+    color:#0F1111;
+    font-size:14px;
     font-weight:bold;
+
     margin-bottom:7px;
 }
 
 input{
     width:100%;
+
     padding:13px 14px;
-    border:1px solid #d7dce2;
+
+    border:1px solid #D9DDE0;
     border-radius:7px;
+
     outline:none;
+
+    color:#0F1111;
+    background:#FFFFFF;
+
     font-size:15px;
+
+    margin-bottom:17px;
+}
+
+input::placeholder{
+    color:#777777;
 }
 
 input:focus{
-    border-color:#1769ff;
+    border-color:#2A8964;
+    box-shadow:0 0 0 3px rgba(42,137,100,.10);
 }
 
-.register-btn{
+
+/* PASSWORD INFO */
+
+.password-info{
+    background:#E9F7F0;
+    color:#237A59;
+
+    border-radius:7px;
+
+    padding:10px 12px;
+
+    font-size:12px;
+
+    margin-top:-5px;
+    margin-bottom:18px;
+}
+
+
+/* BUTTON */
+
+button{
     width:100%;
-    padding:13px;
+
     border:none;
     border-radius:7px;
-    background:#1769ff;
-    color:white;
-    font-size:16px;
+
+    background:#087443;
+    color:#FFFFFF;
+
+    padding:13px;
+
+    font-size:15px;
     font-weight:bold;
+
     cursor:pointer;
 }
 
-.register-btn:disabled{
+button:hover{
+    background:#0B7044;
+}
+
+button:disabled{
     opacity:.7;
     cursor:not-allowed;
 }
 
+
+/* MESSAGE */
+
 .message{
-    margin-top:16px;
-    padding:11px;
-    border-radius:7px;
     display:none;
+
+    padding:11px;
+
+    margin-top:15px;
+
+    border-radius:7px;
+
     text-align:center;
+
     font-size:14px;
 }
 
 .error{
-    background:#fee2e2;
-    color:#b91c1c;
+    display:block;
+
+    background:#fff0f0;
+    color:#b42318;
+    border:1px solid #f2c5c5;
 }
 
 .success{
-    background:#dcfce7;
-    color:#15803d;
-}
-
-.bottom-text{
-    text-align:center;
-    margin-top:22px;
-    color:#6b7280;
-}
-
-.bottom-text a{
-    color:#1769ff;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.home{
     display:block;
-    text-align:center;
-    margin-top:18px;
-    color:#6b7280;
-    text-decoration:none;
-    font-size:14px;
+
+    background:#E9F7F0;
+    color:#237A59;
+    border:1px solid #cdebdc;
 }
+
+
+/* LOGIN */
+
+.login-text{
+    text-align:center;
+
+    color:#777777;
+
+    font-size:14px;
+
+    margin-top:22px;
+}
+
+.login-text a{
+    color:#087443;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+
+    color:#777777;
+
+    font-size:12px;
+
+    padding:20px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+    header{
+        padding:0 18px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .register-card{
+        padding:25px 20px;
+    }
+
+    h1{
+        font-size:25px;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
-<div class="register-box">
 
-    <div class="logo">Tam Earn</div>
+<header>
 
-    <p class="subtitle">
-        Create your account
-    </p>
+<div class="logo">
+Tam Earn
+</div>
 
-    <form id="registerForm">
+<a
+href="index.html"
+class="home">
+Home
+</a>
 
-        <div class="form-group">
-            <label for="name">Full Name</label>
-            <input
-                type="text"
-                id="name"
-                placeholder="Enter your full name"
-                required
-            >
-        </div>
+</header>
 
-        <div class="form-group">
-            <label for="email">Email Address</label>
-            <input
-                type="email"
-                id="email"
-                placeholder="Enter your email"
-                required
-            >
-        </div>
 
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input
-                type="password"
-                id="password"
-                placeholder="Minimum 6 characters"
-                minlength="6"
-                required
-            >
-        </div>
 
-        <div class="form-group">
-            <label for="confirmPassword">Confirm Password</label>
-            <input
-                type="password"
-                id="confirmPassword"
-                placeholder="Confirm your password"
-                minlength="6"
-                required
-            >
-        </div>
+<div class="register-area">
 
-        <button
-            type="submit"
-            class="register-btn"
-            id="registerBtn"
-        >
-            Create Account
-        </button>
+<div class="register-card">
 
-    </form>
 
-    <div id="message" class="message"></div>
+<div class="register-icon">
+👤
+</div>
 
-    <div class="bottom-text">
-        Already have an account?
-        <a href="login.html">Login</a>
-    </div>
 
-    <a href="index.html" class="home">
-        ← Back to Home
-    </a>
+<h1>
+Create Account
+</h1>
+
+<div class="subtitle">
+Join Tam Earn and start your journey
+</div>
+
+
+<form id="registerForm">
+
+
+<label for="name">
+Full Name
+</label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter your full name"
+required
+>
+
+
+<label for="email">
+Email Address
+</label>
+
+<input
+type="email"
+id="email"
+placeholder="Enter your email"
+required
+>
+
+
+<label for="password">
+Password
+</label>
+
+<input
+type="password"
+id="password"
+placeholder="Create a password"
+required
+>
+
+<div class="password-info">
+Password must contain at least 8 characters,
+including a letter and a number.
+</div>
+
+
+<label for="confirmPassword">
+Confirm Password
+</label>
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Confirm your password"
+required
+>
+
+
+<button
+type="submit"
+id="registerBtn">
+
+Create Account
+
+</button>
+
+
+</form>
+
+
+<div
+id="message"
+class="message">
+</div>
+
+
+<div class="login-text">
+
+Already have an account?
+
+<a href="login.html">
+Login
+</a>
 
 </div>
 
 
+</div>
+
+</div>
+
+
+<footer>
+
+© 2026 Tam Earn. All rights reserved.
+
+</footer>
+
+
+
 <script type="module">
 
-import { initializeApp } from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 import {
     getAuth,
     createUserWithEmailAndPassword,
     updateProfile
-} from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 import {
     getDatabase,
     ref,
     set
-} from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
 
-
-/* FIREBASE CONFIG */
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAQ-FHhexuUfxkcA7zS2iSCLDpAStj3DqI",
-    authDomain: "tam-earn.firebaseapp.com",
-    projectId: "tam-earn",
-    storageBucket: "tam-earn.firebasestorage.app",
-    messagingSenderId: "451049191421",
-    appId: "1:451049191421:web:b52ece93f962955e420b94",
-    measurementId: "G-WPLZVFHDBR"
+
+    apiKey:
+    "AIzaSyAQ-FHhexuUfxkcA7zS2iSCLDpAStj3DqI",
+
+    authDomain:
+    "tam-earn.firebaseapp.com",
+
+    projectId:
+    "tam-earn",
+
+    storageBucket:
+    "tam-earn.firebasestorage.app",
+
+    messagingSenderId:
+    "451049191421",
+
+    appId:
+    "1:451049191421:web:b52ece93f962955e420b94",
+
+    measurementId:
+    "G-WPLZVFHDBR"
 };
 
 
-/* INITIALIZE FIREBASE */
+const app =
+initializeApp(firebaseConfig);
 
-const app = initializeApp(firebaseConfig);
+const auth =
+getAuth(app);
 
-const auth = getAuth(app);
+const database =
+getDatabase(app);
 
-const database = getDatabase(app);
 
+const form =
+document.getElementById("registerForm");
 
-/* ELEMENTS */
-
-const registerForm =
-    document.getElementById("registerForm");
-
-const registerBtn =
-    document.getElementById("registerBtn");
+const button =
+document.getElementById("registerBtn");
 
 const message =
-    document.getElementById("message");
+document.getElementById("message");
 
 
-/* MESSAGE */
+function showMessage(
+text,
+type
+){
 
-function showMessage(text,type){
-
-    message.textContent = text;
+    message.textContent =
+    text;
 
     message.className =
-        "message " + type;
-
-    message.style.display = "block";
+    "message " + type;
 }
 
 
-/* REGISTER */
-
-registerForm.addEventListener("submit",async function(event){
+form.addEventListener(
+"submit",
+async function(event){
 
     event.preventDefault();
 
+
     const name =
-        document.getElementById("name").value.trim();
+    document.getElementById("name")
+    .value.trim();
 
     const email =
-        document.getElementById("email").value.trim();
+    document.getElementById("email")
+    .value.trim();
 
     const password =
-        document.getElementById("password").value;
+    document.getElementById("password")
+    .value;
 
     const confirmPassword =
-        document.getElementById("confirmPassword").value;
+    document.getElementById("confirmPassword")
+    .value;
+
+
+    if(password.length < 8){
+
+        showMessage(
+            "Password must be at least 8 characters.",
+            "error"
+        );
+
+        return;
+    }
 
 
     if(password !== confirmPassword){
@@ -306,116 +547,121 @@ registerForm.addEventListener("submit",async function(event){
     }
 
 
-    registerBtn.disabled = true;
+    button.disabled = true;
 
-    registerBtn.textContent =
-        "Creating Account...";
+    button.textContent =
+    "Creating Account...";
 
 
     try{
 
-        /* CREATE FIREBASE ACCOUNT */
-
-        const userCredential =
-            await createUserWithEmailAndPassword(
-                auth,
-                email,
-                password
-            );
+        const result =
+        await createUserWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
 
 
         const user =
-            userCredential.user;
+        result.user;
 
 
-        /* SAVE DISPLAY NAME */
+        await updateProfile(
+            user,
+            {
+                displayName:name
+            }
+        );
 
-        await updateProfile(user,{
-            displayName:name
-        });
-
-
-        /* SAVE USER DATA IN REALTIME DATABASE */
 
         await set(
-            ref(database,"users/" + user.uid),
+            ref(
+                database,
+                "users/" + user.uid
+            ),
             {
-                uid:user.uid,
                 name:name,
                 email:email,
                 balance:0,
-                createdAt:new Date().toISOString(),
-                adsDate:new Date().toDateString()
+                createdAt:
+                new Date().toISOString(),
+                adsDate:
+                new Date().toDateString()
             }
         );
 
 
         showMessage(
-            "Account created successfully!",
+            "Account created successfully! Redirecting...",
             "success"
         );
 
 
-        /* OPEN DASHBOARD */
+        setTimeout(
+            function(){
 
-        setTimeout(function(){
-
-            window.location.href =
+                window.location.href =
                 "dashboard.html";
 
-        },1000);
+            },
+            1000
+        );
 
 
     }catch(error){
 
-        console.error(error);
+        let text =
+        "Unable to create account.";
 
-        let errorMessage =
-            "Unable to create account.";
+        if(
+            error.code ===
+            "auth/email-already-in-use"
+        ){
 
-        if(error.code ===
-            "auth/email-already-in-use"){
+            text =
+            "This email is already registered. Please login.";
 
-            errorMessage =
-                "This email is already registered.";
+        }
 
-        }else if(error.code ===
-            "auth/invalid-email"){
+        else if(
+            error.code ===
+            "auth/invalid-email"
+        ){
 
-            errorMessage =
-                "Please enter a valid email.";
+            text =
+            "Please enter a valid email address.";
 
-        }else if(error.code ===
-            "auth/weak-password"){
+        }
 
-            errorMessage =
-                "Password is too weak.";
+        else if(
+            error.code ===
+            "auth/weak-password"
+        ){
 
-        }else if(error.code ===
-            "auth/network-request-failed"){
-
-            errorMessage =
-                "Network error. Please try again.";
+            text =
+            "Password is too weak.";
 
         }
 
 
         showMessage(
-            errorMessage,
+            text,
             "error"
         );
 
 
-        registerBtn.disabled = false;
+        button.disabled = false;
 
-        registerBtn.textContent =
-            "Create Account";
+        button.textContent =
+        "Create Account";
+
     }
 
 });
 
 </script>
 
+
 </body>
 </html>
-```
