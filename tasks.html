@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tam Earn - Tasks</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#F6F7F9;
+    color:#0F1111;
+}
+
+header{
+    height:70px;
+    background:#FFFFFF;
+    border-bottom:1px solid #D9DDE0;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+}
+
+.logo{
+    color:#087443;
+    font-size:25px;
+    font-weight:800;
+}
+
+.back{
+    color:#087443;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:35px 18px;
+}
+
+.heading{
+    margin-bottom:25px;
+}
+
+.heading h1{
+    color:#0B7044;
+    font-size:30px;
+    margin-bottom:5px;
+}
+
+.heading p{
+    color:#777777;
+}
+
+.balance{
+    background:#087443;
+    color:#FFFFFF;
+    border-radius:13px;
+    padding:20px 24px;
+    margin-bottom:25px;
+}
+
+.balance small{
+    opacity:.9;
+}
+
+.balance strong{
+    display:block;
+    font-size:30px;
+    margin-top:3px;
+}
+
+.task-card{
+    background:#FFFFFF;
+    border:1px solid #D9DDE0;
+    border-radius:13px;
+    padding:25px;
+}
+
+.task-top{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+.task-icon{
+    width:50px;
+    height:50px;
+
+    background:#E9F7F0;
+    color:#087443;
+
+    border-radius:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:23px;
+}
+
+.task-title h2{
+    color:#0B7044;
+    font-size:20px;
+}
+
+.task-title span{
+    color:#777777;
+    font-size:13px;
+}
+
+.task-description{
+    color:#555555;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.reward{
+    background:#E9F7F0;
+    color:#237A59;
+    padding:12px;
+    border-radius:7px;
+    margin-bottom:18px;
+    font-weight:bold;
+}
+
+.start-btn{
+    width:100%;
+    border:0;
+    border-radius:7px;
+
+    background:#087443;
+    color:#FFFFFF;
+
+    padding:13px;
+
+    font-size:15px;
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.start-btn:hover{
+    background:#0B7044;
+}
+
+.start-btn:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+}
+
+.timer-box{
+    display:none;
+    text-align:center;
+
+    background:#E9F7F0;
+
+    border-radius:10px;
+
+    padding:22px;
+
+    margin-top:18px;
+}
+
+.timer-label{
+    color:#237A59;
+    font-size:14px;
+}
+
+.timer{
+    color:#087443;
+    font-size:38px;
+    font-weight:800;
+    margin:5px 0;
+}
+
+.timer-message{
+    color:#777777;
+    font-size:13px;
+}
+
+.message{
+    display:none;
+    margin-top:18px;
+    padding:12px;
+    border-radius:7px;
+    text-align:center;
+    font-size:14px;
+}
+
+.success{
+    display:block;
+    background:#E9F7F0;
+    color:#237A59;
+    border:1px solid #cdebdc;
+}
+
+.error{
+    display:block;
+    background:#fff0f0;
+    color:#b42318;
+    border:1px solid #f2c5c5;
+}
+
+footer{
+    text-align:center;
+    color:#777777;
+    padding:30px 15px;
+    font-size:12px;
+}
+
+@media(max-width:500px){
+
+    header{
+        padding:0 18px;
+    }
+
+    .container{
+        padding:25px 15px;
+    }
+
+    .heading h1{
+        font-size:26px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="logo">
+Tam Earn
+</div>
+
+<a
+href="dashboard.html"
+class="back">
+Dashboard
+</a>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="heading">
+
+<h1>
+Available Tasks
+</h1>
+
+<p>
+Complete eligible tasks and earn rewards.
+</p>
+
+</div>
+
+
+<div class="balance">
+
+<small>
+Current Wallet Balance
+</small>
+
+<strong>
+Rs. <span id="balance">0</span>
+</strong>
+
+</div>
+
+
+<div class="task-card">
+
+
+<div class="task-top">
+
+<div class="task-icon">
+📺
+</div>
+
+<div class="task-title">
+
+<h2>
+15 Second Task
+</h2>
+
+<span>
+Advertisement Task
+</span>
+
+</div>
+
+</div>
+
+
+<p class="task-description">
+
+Watch the available task for the full
+15 seconds. The reward is credited only
+after the timer is completed.
+
+</p>
+
+
+<div class="reward">
+Reward: Rs. 1
+</div>
+
+
+<button
+id="startBtn"
+class="start-btn">
+
+Start Task
+
+</button>
+
+
+<div
+id="timerBox"
+class="timer-box">
+
+<div class="timer-label">
+Task in progress
+</div>
+
+<div
+id="timer"
+class="timer">
+15
+</div>
+
+<div class="timer-message">
+Please wait until the timer reaches zero.
+</div>
+
+</div>
+
+
+<div
+id="message"
+class="message">
+</div>
+
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+© 2026 Tam Earn. All rights reserved.
+
+</footer>
+
+
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+import {
+    getAuth,
+    onAuthStateChanged
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+import {
+    getDatabase,
+    ref,
+    onValue,
+    runTransaction
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
+
+
+const firebaseConfig = {
+
+    apiKey:
+    "AIzaSyAQ-FHhexuUfxkcA7zS2iSCLDpAStj3DqI",
+
+    authDomain:
+    "tam-earn.firebaseapp.com",
+
+    projectId:
+    "tam-earn",
+
+    databaseURL:
+    "https://tam-earn-default-rtdb.firebaseio.com",
+
+    storageBucket:
+    "tam-earn.firebasestorage.app",
+
+    messagingSenderId:
+    "451049191421",
+
+    appId:
+    "1:451049191421:web:b52ece93f962955e420b94",
+
+    measurementId:
+    "G-WPLZVFHDBR"
+};
+
+
+const app =
+initializeApp(firebaseConfig);
+
+const auth =
+getAuth(app);
+
+const database =
+getDatabase(app);
+
+
+const balance =
+document.getElementById("balance");
+
+const startBtn =
+document.getElementById("startBtn");
+
+const timerBox =
+document.getElementById("timerBox");
+
+const timer =
+document.getElementById("timer");
+
+const message =
+document.getElementById("message");
+
+
+let currentUser = null;
+let running = false;
+
+
+function showMessage(
+text,
+type
+){
+
+    message.textContent =
+    text;
+
+    message.className =
+    "message " + type;
+}
+
+
+onAuthStateChanged(
+auth,
+function(user){
+
+    if(!user){
+
+        window.location.href =
+        "login.html";
+
+        return;
+    }
+
+
+    currentUser = user;
+
+
+    const userRef =
+    ref(
+        database,
+        "users/" + user.uid
+    );
+
+
+    onValue(
+        userRef,
+        function(snapshot){
+
+            const data =
+            snapshot.val();
+
+            if(data){
+
+                balance.textContent =
+                Number(
+                    data.balance || 0
+                ).toLocaleString();
+
+            }
+
+        }
+    );
+
+});
+
+
+startBtn.addEventListener(
+"click",
+function(){
+
+    if(!currentUser){
+
+        showMessage(
+            "Please login first.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    if(running){
+        return;
+    }
+
+
+    running = true;
+
+    startBtn.disabled =
+    true;
+
+    startBtn.textContent =
+    "Task Running...";
+
+
+    message.className =
+    "message";
+
+
+    timerBox.style.display =
+    "block";
+
+
+    let seconds = 15;
+
+    timer.textContent =
+    seconds;
+
+
+    const interval =
+    setInterval(
+    async function(){
+
+        seconds--;
+
+        timer.textContent =
+        seconds;
+
+
+        if(seconds <= 0){
+
+            clearInterval(interval);
+
+            await completeTask();
+
+        }
+
+    },
+    1000
+    );
+
+});
+
+
+async function completeTask(){
+
+    try{
+
+        const balanceRef =
+        ref(
+            database,
+            "users/" +
+            currentUser.uid +
+            "/balance"
+        );
+
+
+        await runTransaction(
+            balanceRef,
+            function(currentBalance){
+
+                return (
+                    Number(currentBalance || 0)
+                    + 1
+                );
+
+            }
+        );
+
+
+        showMessage(
+            "Task completed! Rs. 1 has been added to your balance.",
+            "success"
+        );
+
+
+        timerBox.style.display =
+        "none";
+
+        startBtn.disabled =
+        false;
+
+        startBtn.textContent =
+        "Start Task";
+
+        running = false;
+
+
+    }catch(error){
+
+        console.error(
+            "Task completion error:",
+            error
+        );
+
+
+        showMessage(
+            "Unable to credit the reward. Please try again.",
+            "error"
+        );
+
+
+        timerBox.style.display =
+        "none";
+
+        startBtn.disabled =
+        false;
+
+        startBtn.textContent =
+        "Start Task";
+
+        running = false;
+
+    }
+
+}
+
+</script>
+
+
+</body>
+</html>
