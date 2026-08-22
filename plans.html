@@ -1,13 +1,14 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Tam Earn - Plans</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -189,12 +190,15 @@ footer{
 }
 
 @media(max-width:1050px){
+
     .plans-grid{
         grid-template-columns:repeat(2,1fr);
     }
+
 }
 
 @media(max-width:600px){
+
     header{
         padding:0 18px;
     }
@@ -214,33 +218,57 @@ footer{
     .plans-grid{
         grid-template-columns:1fr;
     }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
 <header>
-    <div class="logo">Tam Earn</div>
+
+    <div class="logo">
+        Tam Earn
+    </div>
 
     <a href="dashboard.html" class="back">
         Dashboard
     </a>
+
 </header>
+
 
 <main class="container">
 
 <div class="heading">
-    <h1>Choose Your Plan</h1>
-    <p>Select a task-access plan for your Tam Earn account.</p>
+
+    <h1>
+        Choose Your Plan
+    </h1>
+
+    <p>
+        Select a task-access plan for your Tam Earn account.
+    </p>
+
 </div>
+
 
 <div class="plans-grid">
 
+
 <!-- STARTER -->
+
 <div class="plan-card">
-    <div class="plan-icon">🟢</div>
-    <h2>Starter</h2>
+
+    <div class="plan-icon">
+        🟢
+    </div>
+
+    <h2>
+        Starter
+    </h2>
 
     <div class="plan-price">
         Rs. 600
@@ -259,14 +287,25 @@ footer{
         data-plan="Starter"
         data-price="600"
         data-reward="75">
+
         Select Plan
+
     </button>
+
 </div>
 
+
 <!-- BASIC -->
+
 <div class="plan-card">
-    <div class="plan-icon">🔵</div>
-    <h2>Basic</h2>
+
+    <div class="plan-icon">
+        🔵
+    </div>
+
+    <h2>
+        Basic
+    </h2>
 
     <div class="plan-price">
         Rs. 1,400
@@ -285,14 +324,25 @@ footer{
         data-plan="Basic"
         data-price="1400"
         data-reward="175">
+
         Select Plan
+
     </button>
+
 </div>
 
+
 <!-- SILVER -->
+
 <div class="plan-card">
-    <div class="plan-icon">🥈</div>
-    <h2>Silver</h2>
+
+    <div class="plan-icon">
+        🥈
+    </div>
+
+    <h2>
+        Silver
+    </h2>
 
     <div class="plan-price">
         Rs. 3,200
@@ -311,14 +361,25 @@ footer{
         data-plan="Silver"
         data-price="3200"
         data-reward="400">
+
         Select Plan
+
     </button>
+
 </div>
 
+
 <!-- GOLD -->
+
 <div class="plan-card">
-    <div class="plan-icon">🥇</div>
-    <h2>Gold</h2>
+
+    <div class="plan-icon">
+        🥇
+    </div>
+
+    <h2>
+        Gold
+    </h2>
 
     <div class="plan-price">
         Rs. 6,400
@@ -337,14 +398,25 @@ footer{
         data-plan="Gold"
         data-price="6400"
         data-reward="800">
+
         Select Plan
+
     </button>
+
 </div>
 
+
 <!-- PREMIUM -->
+
 <div class="plan-card featured">
-    <div class="plan-icon">⭐</div>
-    <h2>Premium</h2>
+
+    <div class="plan-icon">
+        ⭐
+    </div>
+
+    <h2>
+        Premium
+    </h2>
 
     <div class="plan-price">
         Rs. 13,600
@@ -363,30 +435,50 @@ footer{
         data-plan="Premium"
         data-price="13600"
         data-reward="1700">
+
         Select Plan
+
     </button>
-</div>
 
 </div>
+
+
+</div>
+
 
 <div id="message" class="message"></div>
 
 </main>
 
+
 <footer>
+
     Tam Earn © 2026. All rights reserved.
+
 </footer>
+
 
 <script type="module">
 
+
+/* FIREBASE APP */
+
 import { initializeApp }
+
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+/* FIREBASE AUTH */
 
 import {
     getAuth,
     onAuthStateChanged
 }
+
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+/* FIREBASE DATABASE */
 
 import {
     getDatabase,
@@ -394,8 +486,12 @@ import {
     update,
     onValue
 }
+
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
 
+
+
+/* FIREBASE CONFIG */
 
 const firebaseConfig = {
 
@@ -405,13 +501,11 @@ const firebaseConfig = {
     authDomain:
     "tam-earn.firebaseapp.com",
 
-    databaseURL: "https://tam-earn-default-rtdb.asia-southeast1.firebasedatabase.app/",
-    
+    databaseURL:
+    "https://tam-earn-default-rtdb.asia-southeast1.firebasedatabase.app/",
+
     projectId:
     "tam-earn",
-
-    databaseURL:
-    "https://tam-earn-default-rtdb.firebaseio.com",
 
     storageBucket:
     "tam-earn.firebasestorage.app",
@@ -424,37 +518,63 @@ const firebaseConfig = {
 
     measurementId:
     "G-WPLZVFHDBR"
+
 };
 
 
-const app = initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
+/* INITIALIZE FIREBASE */
 
-const database = getDatabase(app);
+const app =
+    initializeApp(firebaseConfig);
 
+
+const auth =
+    getAuth(app);
+
+
+const database =
+    getDatabase(app);
+
+
+
+/* ELEMENTS */
 
 const message =
-document.getElementById("message");
+    document.getElementById("message");
+
 
 const buttons =
-document.querySelectorAll(".select-btn");
+    document.querySelectorAll(".select-btn");
 
+
+
+/* CURRENT USER */
 
 let currentUser = null;
 
 
+
+/* MESSAGE FUNCTION */
+
 function showMessage(text,type){
 
-    message.textContent = text;
+    message.textContent =
+        text;
 
     message.className =
         "message " + type;
+
 }
 
 
+
+/* AUTH STATE */
+
 onAuthStateChanged(
+
     auth,
+
     function(user){
 
         if(!user){
@@ -463,10 +583,16 @@ onAuthStateChanged(
                 "login.html";
 
             return;
+
         }
 
-        currentUser = user;
 
+        currentUser =
+            user;
+
+
+
+        /* USER DATABASE REFERENCE */
 
         const userRef =
             ref(
@@ -475,15 +601,23 @@ onAuthStateChanged(
             );
 
 
+
+        /* READ USER DATA */
+
         onValue(
+
             userRef,
+
             function(snapshot){
 
                 const data =
                     snapshot.val();
 
+
                 if(!data){
+
                     return;
+
                 }
 
 
@@ -491,12 +625,18 @@ onAuthStateChanged(
                     data.selectedPlan;
 
 
+
+                /* UPDATE SELECTED BUTTON */
+
                 buttons.forEach(
+
                     function(button){
 
                         if(
+
                             button.dataset.plan ===
                             selectedPlan
+
                         ){
 
                             button.textContent =
@@ -506,7 +646,9 @@ onAuthStateChanged(
                                 "selected"
                             );
 
-                        }else{
+                        }
+
+                        else{
 
                             button.textContent =
                                 "Select Plan";
@@ -514,21 +656,37 @@ onAuthStateChanged(
                             button.classList.remove(
                                 "selected"
                             );
+
                         }
+
                     }
+
                 );
+
             }
+
         );
+
     }
+
 );
 
 
+
+/* SELECT PLAN BUTTONS */
+
 buttons.forEach(
+
     function(button){
 
         button.addEventListener(
+
             "click",
+
             async function(){
+
+
+                /* CHECK LOGIN */
 
                 if(!currentUser){
 
@@ -536,16 +694,28 @@ buttons.forEach(
                         "login.html";
 
                     return;
+
                 }
 
 
+
+                /* PLAN */
+
                 const plan =
                     button.dataset.plan;
+
+
+
+                /* PRICE */
 
                 const price =
                     Number(
                         button.dataset.price
                     );
+
+
+
+                /* DAILY REWARD */
 
                 const dailyReward =
                     Number(
@@ -553,20 +723,34 @@ buttons.forEach(
                     );
 
 
-                button.disabled = true;
+
+                /* DISABLE BUTTON */
+
+                button.disabled =
+                    true;
+
 
                 button.textContent =
                     "Saving...";
 
 
+
                 try{
 
+
+                    /* SAVE TO FIREBASE */
+
                     await update(
+
                         ref(
+
                             database,
+
                             "users/" +
                             currentUser.uid
+
                         ),
+
                         {
 
                             selectedPlan:
@@ -586,54 +770,95 @@ buttons.forEach(
                                 .toISOString()
 
                         }
+
                     );
 
+
+
+                    /* SUCCESS MESSAGE */
 
                     showMessage(
+
                         plan +
                         " plan selected successfully.",
+
                         "success"
+
                     );
 
+
+
+                    /* BUTTON */
 
                     button.textContent =
                         "Selected ✓";
+
 
                     button.classList.add(
                         "selected"
                     );
 
 
-                }catch(error){
+                }
+
+
+                catch(error){
+
+
+                    /* CONSOLE ERROR */
 
                     console.error(
                         error
                     );
 
 
+
+                    /* ERROR MESSAGE */
+
                     showMessage(
-    "Firebase Error: " + error.message,
-    "error"
-);
 
-alert(
-    "Firebase Error:\n" + error.message
-);
+                        "Firebase Error: " +
+                        error.message,
 
+                        "error"
+
+                    );
+
+
+
+                    alert(
+
+                        "Firebase Error:\n" +
+                        error.message
+
+                    );
+
+
+
+                    /* RESET BUTTON */
 
                     button.textContent =
                         "Select Plan";
+
                 }
 
 
-                button.disabled = false;
+
+                /* ENABLE BUTTON */
+
+                button.disabled =
+                    false;
+
             }
+
         );
+
     }
+
 );
+
 
 </script>
 
 </body>
 </html>
-```
