@@ -610,9 +610,13 @@ buttons.forEach(
 
 
                     showMessage(
-                        "Unable to save your plan. Please try again.",
-                        "error"
-                    );
+    "Firebase Error: " + error.message,
+    "error"
+);
+
+alert(
+    "Firebase Error:\n" + error.message
+);
 
 
                     button.textContent =
