@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tam Earn - Deposit</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#F6F7F9;
+    color:#0F1111;
+}
+
+header{
+    height:72px;
+    background:#fff;
+    border-bottom:1px solid #D9DDE0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+}
+
+.logo{
+    color:#087443;
+    font-size:26px;
+    font-weight:800;
+}
+
+.back{
+    color:#087443;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.container{
+    max-width:1050px;
+    margin:auto;
+    padding:32px 18px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:28px;
+}
+
+.title h1{
+    color:#0B7044;
+    font-size:30px;
+    margin-bottom:6px;
+}
+
+.title p{
+    color:#777;
+    font-size:14px;
+}
+
+.section{
+    background:#fff;
+    border:1px solid #D9DDE0;
+    border-radius:13px;
+    padding:24px;
+    margin-bottom:20px;
+}
+
+.section h2{
+    color:#0B7044;
+    font-size:21px;
+    margin-bottom:18px;
+}
+
+.plans{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+}
+
+.plan{
+    border:1px solid #D9DDE0;
+    border-radius:10px;
+    padding:16px;
+    text-align:center;
+    cursor:pointer;
+    background:#fff;
+}
+
+.plan:hover{
+    border-color:#087443;
+}
+
+.plan.active{
+    border:2px solid #087443;
+    background:#E9F7F0;
+}
+
+.plan h3{
+    color:#0B7044;
+    margin-bottom:7px;
+}
+
+.price{
+    font-size:20px;
+    font-weight:800;
+    color:#087443;
+}
+
+.reward{
+    font-size:12px;
+    color:#777;
+    margin-top:5px;
+}
+
+.accounts{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.account{
+    border:1px solid #D9DDE0;
+    border-radius:10px;
+    padding:18px;
+}
+
+.account h3{
+    color:#0B7044;
+    margin-bottom:8px;
+}
+
+.account p{
+    font-size:14px;
+    margin:4px 0;
+}
+
+.account strong{
+    color:#087443;
+}
+
+label{
+    display:block;
+    font-size:14px;
+    font-weight:bold;
+    margin:14px 0 7px;
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    border:1px solid #C9CED3;
+    border-radius:7px;
+    font-size:14px;
+    background:#fff;
+}
+
+input:focus,
+select:focus{
+    outline:none;
+    border-color:#087443;
+}
+
+input[type=file]{
+    padding:9px;
+}
+
+.submit{
+    width:100%;
+    border:0;
+    border-radius:8px;
+    background:#087443;
+    color:#fff;
+    padding:13px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+.submit:hover{
+    background:#0B7044;
+}
+
+.submit:disabled{
+    opacity:.65;
+    cursor:not-allowed;
+}
+
+.notice{
+    background:#FFF8E6;
+    border:1px solid #F0D98C;
+    border-radius:8px;
+    padding:13px;
+    font-size:13px;
+    color:#6D5600;
+    margin-top:14px;
+}
+
+.message{
+    display:none;
+    border-radius:8px;
+    padding:12px;
+    margin-top:16px;
+    text-align:center;
+    font-size:14px;
+}
+
+.success{
+    display:block;
+    background:#E9F7F0;
+    border:1px solid #cdebdc;
+    color:#237A59;
+}
+
+.error{
+    display:block;
+    background:#FFF0F0;
+    border:1px solid #efc0c0;
+    color:#B42318;
+}
+
+@media(max-width:900px){
+
+    .plans{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .accounts{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    header{
+        padding:0 18px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .plans{
+        grid-template-columns:1fr;
+    }
+
+    .container{
+        padding:25px 14px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        Tam Earn
+    </div>
+
+    <a href="dashboard.html" class="back">
+        Dashboard
+    </a>
+
+</header>
+
+
+<main class="container">
+
+
+<div class="title">
+
+    <h1>
+        Deposit
+    </h1>
+
+    <p>
+        Select your plan and submit your payment details for verification.
+    </p>
+
+</div>
+
+
+
+<!-- PLANS -->
+
+<div class="section">
+
+    <h2>
+        1. Select Plan
+    </h2>
+
+
+    <div class="plans">
+
+
+        <div
+            class="plan"
+            data-plan="Starter"
+            data-price="600">
+
+            <h3>
+                Starter
+            </h3>
+
+            <div class="price">
+                Rs. 600
+            </div>
+
+            <div class="reward">
+                Daily Reward: Rs. 75
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="plan"
+            data-plan="Basic"
+            data-price="1400">
+
+            <h3>
+                Basic
+            </h3>
+
+            <div class="price">
+                Rs. 1,400
+            </div>
+
+            <div class="reward">
+                Daily Reward: Rs. 175
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="plan"
+            data-plan="Silver"
+            data-price="3200">
+
+            <h3>
+                Silver
+            </h3>
+
+            <div class="price">
+                Rs. 3,200
+            </div>
+
+            <div class="reward">
+                Daily Reward: Rs. 400
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="plan"
+            data-plan="Gold"
+            data-price="6400">
+
+            <h3>
+                Gold
+            </h3>
+
+            <div class="price">
+                Rs. 6,400
+            </div>
+
+            <div class="reward">
+                Daily Reward: Rs. 800
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="plan"
+            data-plan="Premium"
+            data-price="13600">
+
+            <h3>
+                Premium
+            </h3>
+
+            <div class="price">
+                Rs. 13,600
+            </div>
+
+            <div class="reward">
+                Daily Reward: Rs. 1,700
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- PAYMENT ACCOUNTS -->
+
+<div class="section">
+
+    <h2>
+        2. Deposit Accounts
+    </h2>
+
+
+    <div class="accounts">
+
+
+        <div class="account">
+
+            <h3>
+                Easypaisa
+            </h3>
+
+            <p>
+                Account Name:
+                <strong>Hasham</strong>
+            </p>
+
+            <p>
+                Number:
+                <strong>03079226104</strong>
+            </p>
+
+        </div>
+
+
+
+        <div class="account">
+
+            <h3>
+                JazzCash
+            </h3>
+
+            <p>
+                Account Name:
+                <strong>Hasham</strong>
+            </p>
+
+            <p>
+                Number:
+                <strong>03013590069</strong>
+            </p>
+
+        </div>
+
+
+
+        <div class="account">
+
+            <h3>
+                MCB Bank
+            </h3>
+
+            <p>
+                Account Name:
+                <strong>Hasham</strong>
+            </p>
+
+            <p>
+                Account No:
+                <strong>1414121311009347</strong>
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="notice">
+
+        Please send the exact amount of your selected plan
+        to one of the accounts above.
+
+        Keep your payment receipt and enter the correct
+        transaction ID.
+
+    </div>
+
+</div>
+
+
+
+<!-- PAYMENT DETAILS -->
+
+<div class="section">
+
+    <h2>
+        3. Payment Details
+    </h2>
+
+
+    <form id="depositForm">
+
+
+        <label for="method">
+            Payment Method
+        </label>
+
+        <select id="method" required>
+
+            <option value="">
+                Select payment method
+            </option>
+
+            <option value="Easypaisa">
+                Easypaisa
+            </option>
+
+            <option value="JazzCash">
+                JazzCash
+            </option>
+
+            <option value="MCB Bank">
+                MCB Bank
+            </option>
+
+        </select>
+
+
+
+        <label for="amount">
+            Deposit Amount
+        </label>
+
+        <input
+            id="amount"
+            type="number"
+            min="1"
+            placeholder="Enter amount"
+            required
+        >
+
+
+
+        <label for="transactionId">
+            Transaction ID
+        </label>
+
+        <input
+            id="transactionId"
+            type="text"
+            placeholder="Enter transaction ID"
+            required
+        >
+
+
+
+        <label for="screenshot">
+            Payment Screenshot
+        </label>
+
+        <input
+            id="screenshot"
+            type="file"
+            accept="image/*"
+            required
+        >
+
+
+
+        <button
+            class="submit"
+            id="submitBtn"
+            type="submit">
+
+            Submit Deposit
+
+        </button>
+
+
+    </form>
+
+
+    <div
+        id="message"
+        class="message">
+    </div>
+
+
+</div>
+
+
+</main>
+
+
+
+<script type="module">
+
+
+/* FIREBASE APP */
+
+import {
+    initializeApp
+}
+
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+
+/* FIREBASE AUTH */
+
+import {
+    getAuth,
+    onAuthStateChanged
+}
+
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+
+/* FIREBASE DATABASE */
+
+import {
+    getDatabase,
+    ref,
+    push,
+    update
+}
+
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
+
+
+
+/* FIREBASE STORAGE */
+
+import {
+    getStorage,
+    ref as storageRef,
+    uploadBytes,
+    getDownloadURL
+}
+
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-storage.js";
+
+
+
+/* FIREBASE CONFIG */
+
+const firebaseConfig = {
+
+    apiKey:
+    "AIzaSyAQ-FHhexuUfxkcA7zS2iSCLDpAStj3DqI",
+
+    authDomain:
+    "tam-earn.firebaseapp.com",
+
+    databaseURL:
+    "https://tam-earn-default-rtdb.asia-southeast1.firebasedatabase.app/",
+
+    projectId:
+    "tam-earn",
+
+    storageBucket:
+    "tam-earn.firebasestorage.app",
+
+    messagingSenderId:
+    "451049191421",
+
+    appId:
+    "1:451049191421:web:b52ece93f962955e420b94",
+
+    measurementId:
+    "G-WPLZVFHDBR"
+
+};
+
+
+
+/* INITIALIZE */
+
+const app =
+    initializeApp(firebaseConfig);
+
+
+const auth =
+    getAuth(app);
+
+
+const database =
+    getDatabase(app);
+
+
+const storage =
+    getStorage(app);
+
+
+
+/* VARIABLES */
+
+let currentUser = null;
+
+let selectedPlan = "";
+
+let selectedPrice = 0;
+
+
+
+/* ELEMENTS */
+
+const plans =
+    document.querySelectorAll(".plan");
+
+const method =
+    document.getElementById("method");
+
+const amount =
+    document.getElementById("amount");
+
+const transactionId =
+    document.getElementById("transactionId");
+
+const screenshot =
+    document.getElementById("screenshot");
+
+const form =
+    document.getElementById("depositForm");
+
+const submitBtn =
+    document.getElementById("submitBtn");
+
+const message =
+    document.getElementById("message");
+
+
+
+/* MESSAGE */
+
+function showMessage(
+    text,
+    type
+){
+
+    message.textContent =
+        text;
+
+    message.className =
+        "message " + type;
+
+}
+
+
+
+/* AUTH */
+
+onAuthStateChanged(
+
+    auth,
+
+    (user)=>{
+
+        if(!user){
+
+            window.location.href =
+                "login.html";
+
+            return;
+
+        }
+
+        currentUser =
+            user;
+
+    }
+
+);
+
+
+
+/* SELECT PLAN */
+
+plans.forEach(
+
+    (plan)=>{
+
+        plan.addEventListener(
+
+            "click",
+
+            ()=>{
+
+                plans.forEach(
+
+                    p =>
+                    p.classList.remove(
+                        "active"
+                    )
+
+                );
+
+
+                plan.classList.add(
+                    "active"
+                );
+
+
+                selectedPlan =
+                    plan.dataset.plan;
+
+
+                selectedPrice =
+                    Number(
+                        plan.dataset.price
+                    );
+
+
+                amount.value =
+                    selectedPrice;
+
+            }
+
+        );
+
+    }
+
+);
+
+
+
+/* SUBMIT */
+
+form.addEventListener(
+
+    "submit",
+
+    async (e)=>{
+
+        e.preventDefault();
+
+
+        if(!currentUser){
+
+            showMessage(
+                "Please login first.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if(!selectedPlan){
+
+            showMessage(
+                "Please select a plan first.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        const selectedMethod =
+            method.value;
+
+
+        const enteredAmount =
+            Number(
+                amount.value
+            );
+
+
+        const transaction =
+            transactionId.value.trim();
+
+
+        const file =
+            screenshot.files[0];
+
+
+        if(!selectedMethod){
+
+            showMessage(
+                "Please select a payment method.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if(
+            enteredAmount !==
+            selectedPrice
+        ){
+
+            showMessage(
+                "Deposit amount must match the selected plan price.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if(!transaction){
+
+            showMessage(
+                "Please enter the transaction ID.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if(!file){
+
+            showMessage(
+                "Please upload your payment screenshot.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if(
+            !file.type.startsWith(
+                "image/"
+            )
+        ){
+
+            showMessage(
+                "Please upload an image screenshot.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if(
+            file.size >
+            5 * 1024 * 1024
+        ){
+
+            showMessage(
+                "Screenshot must be 5 MB or smaller.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        submitBtn.disabled =
+            true;
+
+
+        submitBtn.textContent =
+            "Uploading...";
+
+
+        try{
+
+
+            /* FILE NAME */
+
+            const timestamp =
+                Date.now();
+
+
+            const fileName =
+                timestamp +
+                "_" +
+                file.name.replace(
+                    /[^a-zA-Z0-9._-]/g,
+                    "_"
+                );
+
+
+            /* STORAGE REFERENCE */
+
+            const imageRef =
+                storageRef(
+                    storage,
+                    "depositScreenshots/" +
+                    currentUser.uid +
+                    "/" +
+                    fileName
+                );
+
+
+            /* UPLOAD SCREENSHOT */
+
+            await uploadBytes(
+                imageRef,
+                file
+            );
+
+
+            /* GET IMAGE URL */
+
+            const screenshotUrl =
+                await getDownloadURL(
+                    imageRef
+                );
+
+
+            submitBtn.textContent =
+                "Saving Deposit...";
+
+
+            /* NEW DEPOSIT */
+
+            const depositRef =
+                push(
+                    ref(
+                        database,
+                        "deposits/" +
+                        currentUser.uid
+                    )
+                );
+
+
+            /* SAVE */
+
+            await update(
+
+                depositRef,
+
+                {
+
+                    userId:
+                    currentUser.uid,
+
+                    email:
+                    currentUser.email || "",
+
+                    plan:
+                    selectedPlan,
+
+                    amount:
+                    enteredAmount,
+
+                    paymentMethod:
+                    selectedMethod,
+
+                    transactionId:
+                    transaction,
+
+                    screenshotUrl:
+                    screenshotUrl,
+
+                    status:
+                    "Pending",
+
+                    submittedAt:
+                    new Date().toISOString()
+
+                }
+
+            );
+
+
+            /* SUCCESS */
+
+            showMessage(
+
+                "Deposit submitted successfully. Your payment is pending verification.",
+
+                "success"
+
+            );
+
+
+            form.reset();
+
+
+            plans.forEach(
+
+                p =>
+                p.classList.remove(
+                    "active"
+                )
+
+            );
+
+
+            selectedPlan =
+                "";
+
+            selectedPrice =
+                0;
+
+
+            submitBtn.textContent =
+                "Deposit Submitted ✓";
+
+
+        }
+
+        catch(error){
+
+
+            console.error(
+                "Deposit error:",
+                error
+            );
+
+
+            showMessage(
+
+                "Unable to submit deposit: " +
+                error.message,
+
+                "error"
+
+            );
+
+
+            submitBtn.disabled =
+                false;
+
+
+            submitBtn.textContent =
+                "Submit Deposit";
+
+        }
+
+    }
+
+);
+
+</script>
+
+</body>
+</html>
